@@ -1,0 +1,144 @@
+<html><head><link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<link rel="import" href="../epic-styles/epic-styles.html">
+
+</head><body><dom-module id="epic-button">
+  <template>
+      <style is="custom-style" include="epic-styles">
+
+      :host {
+          display: inline-block;
+
+          --paper-button-ink-color: var(--epic-button-ink-color);
+
+          --paper-button: {
+              @apply(--epic-type-base);
+              @apply(--epic-type-base-nowrap);
+              font-size: var(--epic-font-size);
+              line-height: var(--epic-line-height);
+              text-transform: uppercase;
+              font-weight: bold;
+              border: 0 none;
+              border-radius: 0;
+              letter-spacing: .05em;
+              color: white;
+              background-color: var(--epic-color-poppy);
+              display: block;
+              text-align: center;
+              padding: calc(var(--epic-line-height)/2) var(--epic-line-height);
+              margin-bottom:var(--epic-line-height);
+              @apply(--epic-button);
+          };
+
+          --paper-button-disabled:{
+              cursor: default;
+              opacity: 0.45;
+              background-image: none;
+              box-shadow: none;
+              pointer-events: none;
+              @apply(--epic-button-disabled);
+          };
+
+          --paper-button-flat-keyboard-focus: {
+              @apply(--epic-button-flat-keyboard-focus);
+          };
+
+          --paper-button-raised-keyboard-focus: {
+              @apply(--epic-button-raised-keyboard-focus);
+          };
+      }
+
+      :host[expand]{
+          display: block;
+      }
+
+      :host[primary] paper-button{
+          color: white;
+          background-color: var(--epic-color-poppy);
+      }
+
+      :host[primary][light] paper-button{
+          color: var(--epic-color-poppy);
+          background-color: white;
+      }
+
+      :host[secondary][light] paper-button{
+          color: var(--epic-color-navy);
+          background-color: white;
+      }
+
+      :host[secondary] paper-button{
+          color: white;
+          background-color: var(--epic-color-navy)
+      }
+
+      :host[navy] paper-button{
+          background-color:var(--epic-color-navy);
+      }
+      :host[lucky-green] paper-button{
+          background-color:var(--epic-color-lucky-green);
+      }
+      :host[poppy] paper-button{
+          background-color:var(--epic-color-poppy);
+      }
+      :host[marigold] paper-button{
+          background-color:var(--epic-color-marigold);
+      }
+      :host[eggplant] paper-button{
+          background-color:var(--epic-color-eggplant);
+      }
+      :host[moss] paper-button{
+          background-color:var(--epic-color-moss);
+      }
+      :host[robin-egg] paper-button{
+          background-color:var(--epic-color-robin-egg);
+      }
+      :host[teal] paper-button{
+          background-color:var(--epic-color-teal);
+      }
+    :host[sapphire] paper-button{
+        background-color:var(--epic-color-sapphire);
+    }
+    :host[blood-orange] paper-button{
+        background-color:var(--epic-color-blood-orange);
+    }
+    :host[red] paper-button{
+        background-color:var(--epic-color-red);
+    }
+    :host[night] paper-button{
+        background-color:var(--epic-color-night);
+    }
+    :host[rust] paper-button{
+        background-color:var(--epic-color-rust);
+    }
+    :host[charcoal] paper-button{
+        background-color:var(--epic-color-charcoal);
+    }
+    :host[steel-grey] paper-button{
+        background-color:var(--epic-color-steel-grey);
+    }
+    :host[light-grey] paper-button{
+        background-color:var(--epic-color-light-grey);
+    }
+    :host[aluminum] paper-button{
+        background-color:var(--epic-color-aluminum);
+    }
+    :host[white] paper-button{
+        color: var(--epic-color-charcoal);
+        background-color:var(--epic-color-white);
+    }
+
+      a {
+          text-decoration:none;
+      }
+    </style>
+    <a href="[[href]]">
+        <paper-button active="{{active}}" ariaactiveattribute="{{ariaActiveAttribute}}" disabled="{{disabled}}" elevation="[[elevation]]" focused="{{focused}}" keybindings="{{keyBindings}}" keyeventtarget="{{keyEventTarget}}" noink="{{noink}}" pointerdown="{{pointerDown}}" pressed="{{pressed}}" raised="{{raised}}" receivedfocusfromkeyboard="{{receivedFocusFromKeyboard}}" stopkeyboardeventpropagation="{{stopKeyboardEventPropagation}}" toggles="{{toggles}}">
+            <content></content>
+        </paper-button>
+    </a>
+  </template>
+
+  </dom-module>
+<script src="epic-button.js"></script></body></html>
