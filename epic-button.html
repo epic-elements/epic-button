@@ -1,23 +1,21 @@
-<html><head><link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-button/paper-button.html">
 
 <link rel="import" href="../epic-styles/epic-styles.html">
 
-</head><body><dom-module id="epic-button">
+<dom-module id="epic-button">
   <template>
       <style is="custom-style" include="epic-styles">
 
       :host {
           display: inline-block;
-          margin: 0;
-          padding: 0;
 
           --paper-button-ink-color: var(--epic-button-ink-color);
 
           --paper-button: {
               @apply(--epic-type-base);
-              @apply(--epic-type-nowrap);
-              font-size: var(--epic-base-font-size);
+              @apply(--epic-type-base-nowrap);
+              font-size: var(--epic-font-size);
               line-height: var(--epic-baseline);
               text-transform: uppercase;
               font-weight: bold;
@@ -29,7 +27,7 @@
               display: block;
               text-align: center;
               padding: calc(var(--epic-baseline)/2) var(--epic-baseline);
-              margin-bottom:0;
+/*               margin-bottom:var(--epic-baseline); */
               @apply(--epic-button);
           };
 
@@ -136,11 +134,148 @@
       }
     </style>
     <a href="[[href]]">
-        <paper-button active="{{active}}" ariaactiveattribute="{{ariaActiveAttribute}}" disabled="{{disabled}}" elevation="[[elevation]]" focused="{{focused}}" keybindings="{{keyBindings}}" keyeventtarget="{{keyEventTarget}}" noink="{{noink}}" pointerdown="{{pointerDown}}" pressed="{{pressed}}" raised="{{raised}}" receivedfocusfromkeyboard="{{receivedFocusFromKeyboard}}" stopkeyboardeventpropagation="{{stopKeyboardEventPropagation}}" toggles="{{toggles}}">
+        <paper-button active="{{active}}" ariaActiveAttribute="{{ariaActiveAttribute}}" disabled="{{disabled}}" elevation="[[elevation]]" focused="{{focused}}" keyBindings="{{keyBindings}}" keyEventTarget="{{keyEventTarget}}" noink="{{noink}}" pointerDown="{{pointerDown}}" pressed="{{pressed}}" raised="{{raised}}" receivedFocusFromKeyboard="{{receivedFocusFromKeyboard}}" stopKeyboardEventPropagation="{{stopKeyboardEventPropagation}}" toggles="{{toggles}}">
             <content></content>
         </paper-button>
     </a>
   </template>
 
-  </dom-module>
-<script src="epic-button.js"></script></body></html>
+  <script>
+  'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+(function () {
+    'use strict';
+
+    var EpicButton = function () {
+        function EpicButton() {
+            _classCallCheck(this, EpicButton);
+        }
+
+        _createClass(EpicButton, [{
+            key: 'beforeRegister',
+
+
+            // Define behaviors with a getter.
+            // get behaviors() {}
+
+            value: function beforeRegister() {
+                this.is = 'epic-button';
+                this.properties = {
+                    href: {
+                        type: String,
+                        value: '#',
+                        notify: true,
+                        reflectToAttribute: true
+                    },
+                    active: {
+                        type: Boolean,
+                        value: false,
+                        notify: true,
+                        reflectToAttribute: true
+                    },
+                    ariaActiveAttribute: {
+                        type: String,
+                        value: 'aria-pressed'
+                    },
+                    disabled: {
+                        type: Boolean,
+                        value: false,
+                        notify: true,
+                        reflectToAttribute: true
+                    },
+                    elevation: {
+                        type: Number,
+                        notify: true,
+                        reflectToAttribute: true,
+                        readOnly: true
+                    },
+                    focused: {
+                        type: Boolean,
+                        value: false,
+                        notify: true,
+                        reflectToAttribute: true
+                    },
+                    keyBindings: {
+                        type: Object,
+                        value: function value() {
+                            return {};
+                        }
+                    },
+                    keyEventTarget: {
+                        type: Object,
+                        value: null
+                    },
+                    noink: {
+                        type: Boolean,
+                        notify: true,
+                        reflectToAttribute: true
+                    },
+                    pointerDown: {
+                        type: Boolean,
+                        value: false,
+                        notify: true,
+                        reflectToAttribute: true
+                    },
+                    pressed: {
+                        type: Boolean,
+                        value: false,
+                        notify: true,
+                        reflectToAttribute: true
+                    },
+                    raised: {
+                        type: Boolean,
+                        value: false,
+                        notify: true,
+                        reflectToAttribute: true
+                    },
+                    receivedFocusFromKeyboard: {
+                        type: Boolean,
+                        notify: true,
+                        reflectToAttribute: true
+                    },
+                    stopKeyboardEventPropagation: {
+                        type: Boolean,
+                        value: false,
+                        notify: true,
+                        reflectToAttribute: true
+                    },
+                    toggles: {
+                        type: Boolean,
+                        value: false,
+                        notify: true,
+                        reflectToAttribute: true
+                    }
+                };
+                this.observers = [];
+                this.listeners = {};
+            }
+            // Define other lifecycle methods as you need.
+
+        }, {
+            key: 'ready',
+            value: function ready() {}
+        }, {
+            key: 'attached',
+            value: function attached() {}
+        }, {
+            key: 'detached',
+            value: function detached() {}
+        }, {
+            key: 'attributeChanged',
+            value: function attributeChanged() {}
+        }]);
+
+        return EpicButton;
+    }();
+
+    // Register the element using Polymer's constructor.
+
+
+    Polymer(EpicButton);
+})();
+  </script>
+</dom-module>
